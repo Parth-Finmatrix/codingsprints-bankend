@@ -9,7 +9,7 @@ async function bootstrap() {
 
   const logger = new Logger('tutorialsBootstrap');
 
-  const broker = process.env.KAFKA_BROKER || 'localhost:9092';
+  const broker = process.env.KAFKA_BROKER || 'kafka:9092';
 
   //create an microservices instance
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(

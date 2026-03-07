@@ -28,7 +28,7 @@ import { MfaHttpController } from '../mfa/mfa.http.controller';
             clientId:
               process.env.KAFKA_AUTHENTICATION_CLIENT_ID ||
               'authentication-service',
-            brokers: [process.env.KAFKA_BROKER ?? 'localhost:9092'],
+            brokers: [process.env.KAFKA_BROKER ?? 'kafka:9092'],
           },
           consumer: {
             groupId:

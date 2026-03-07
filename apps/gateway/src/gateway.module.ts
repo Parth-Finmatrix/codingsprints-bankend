@@ -21,7 +21,7 @@ import { SessionHttpController } from './session/session.http.controller';
           client: {
             clientId:
               process.env.KAFKA_TUTORIALS_CLIENT_ID ?? 'tutorials-service',
-            brokers: [process.env.KAFKA_BROKER ?? 'localhost:9092'],
+            brokers: [process.env.KAFKA_BROKER ?? 'kafka:9092'],
           },
           consumer: {
             groupId: process.env.KAFKA_TUTORIALS_GROUP_ID || 'tutorials-group',
