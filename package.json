@@ -6,7 +6,10 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
+    "build": "nest build gateway && nest build authentication && nest build tutorials",
+    "start:prod:gateway": "node dist/apps/gateway/main.js",
+    "start:prod:authentication": "node dist/apps/authentication/main.js",
+    "start:prod:tutorials": "node dist/apps/tutorials/main.js",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",

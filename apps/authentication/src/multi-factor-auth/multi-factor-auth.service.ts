@@ -98,7 +98,7 @@ export class MultiFactorAuthService {
 
     const role = await this.RolesModel.findById(user.role);
     if (!role) {
-      rpcForbidden('Role not found', 403);
+      throw rpcForbidden('Role not found');
     }
 
     const valid = speakeasy.totp.verify({
