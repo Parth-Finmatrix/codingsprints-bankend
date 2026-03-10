@@ -23,7 +23,7 @@ jobs:
             cd /root/codingsprints/tutorials-website/bankend
 
             echo "Pull latest code"
-            git pull origin main
+            git pull origin master
 
             echo "Rebuild docker containers"
             cd docker/production
