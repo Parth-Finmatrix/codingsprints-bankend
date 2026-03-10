@@ -1,50 +1,23 @@
-
-# ---------- BUILD STAGE ----------
-FROM node:20-alpine AS builder
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-
-COPY . .
-RUN npm run build
-
-# ---------- PRODUCTION STAGE ----------
+# Base Image
 FROM node:20-alpine
 
+# Create app directory
 WORKDIR /app
 
+# Copy package files
 COPY package*.json ./
-RUN npm install --only=production
 
-COPY --from=builder /app/dist ./dist
+# Install dependencies
+RUN npm install
 
+# Copy project
+COPY . .
+
+# Build NestJS apps
+RUN npm run build
+
+# Expose gateway port
 EXPOSE 8000
 
+# Start command
 CMD ["node", "dist/apps/gateway/main.js"]
-
-
-# # Base Image
-# FROM node:20-alpine
-
-# # Create app directory
-# WORKDIR /app
-
-# # Copy package files
-# COPY package*.json ./
-
-# # Install dependencies
-# RUN npm install
-
-# # Copy project
-# COPY . .
-
-# # Build NestJS apps
-# RUN npm run build
-
-# # Expose gateway port
-# EXPOSE 8000
-
-# # Start command
-# CMD ["node", "dist/apps/gateway/main.js"]
