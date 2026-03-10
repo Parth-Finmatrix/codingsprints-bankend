@@ -13,7 +13,7 @@ export class TutorialsController {
 
   @MessagePattern('tutorial.created')
   handleMessage(@Payload() message: any) {
-    console.log('Received:', message);
+    console.log('Received =>', message);
 
     return {
       success: true,
