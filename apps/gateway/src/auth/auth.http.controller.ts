@@ -50,7 +50,7 @@ export class AuthHttpController {
     await this.authentication.connect();
   }
 
-  @Get('profile')
+  @Get('user-profile')
   @UseGuards(JwtAuthGuard)
   getProfile(@Req() req: Request) {
     try {
