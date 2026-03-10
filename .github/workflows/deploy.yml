@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd /root/codingsprints/bankend
+            cd /root/codingsprints/tutorials-website/bankend
 
             echo "Pull latest code"
             git pull origin main
